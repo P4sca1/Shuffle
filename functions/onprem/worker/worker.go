@@ -114,14 +114,14 @@ var window = shuffle.NewTimeWindow(10 * time.Second)
 
 // Images to be autodeployed in the latest version of Shuffle.
 var autoDeploy = map[string]string{
-	"http:1.4.2":            "http:1.4.2",
-	"iris:1.1.2":            "iris:1.1.2",
-	"logprep:1.0.0":         "logprep:1.0.0",
-	"misp:1.1.2":            "misp:1.1.2",
-	"opensearch:1.1.2":      "opensearch:1.1.2",
-	"shuffle-subflow:1.1.0": "shuffle-subflow:1.1.0",
-	"shuffle-subflow:1.1.2": "shuffle-subflow:1.1.2",
-	"shuffle-tools:1.2.2":   "shuffle-tools:1.2.2",
+	"http:1.4.2":            "shuffle/http:1.4.2",
+	"iris:1.1.2":            "shuffle/iris:1.1.2",
+	"logprep:1.0.0":         "shuffle/logprep:1.0.0",
+	"misp:1.1.2":            "shuffle/misp:1.1.2",
+	"opensearch:1.1.2":      "shuffle/opensearch:1.1.2",
+	"shuffle-subflow:1.1.0": "shuffle/shuffle-subflow:1.1.0",
+	"shuffle-subflow:1.1.2": "shuffle/shuffle-subflow:1.1.2",
+	"shuffle-tools:1.2.2":   "shuffle/shuffle-tools:1.2.2",
 	// "http:1.4.0":            "frikky/shuffle:http_1.4.0",
 	// "shuffle-tools:1.2.0":   "frikky/shuffle:shuffle-tools_1.2.0",
 	// "shuffle-subflow:1.1.0": "frikky/shuffle:shuffle-subflow_1.1.0",
