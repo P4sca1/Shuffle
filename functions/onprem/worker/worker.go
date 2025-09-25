@@ -116,11 +116,11 @@ var window = shuffle.NewTimeWindow(10 * time.Second)
 var autoDeploy = map[string]string{
 	"http:1.4.3":            "shuffle/http:1.4.3",
 	"iris:1.1.3":            "shuffle/iris:1.1.3",
-	"logprep:1.0.0":         "shuffle/logprep:1.0.0",
+	"logprep:1.0.1":         "shuffle/logprep:1.0.1",
 	"misp:1.1.3":            "shuffle/misp:1.1.3",
 	"opensearch:1.1.3":      "shuffle/opensearch:1.1.3",
-	"shuffle-subflow:1.1.3": "shuffle/shuffle-subflow:1.1.3",
-	"shuffle-tools:1.2.3":   "shuffle/shuffle-tools:1.2.3",
+	"shuffle-subflow:1.1.0": "shuffle/shuffle-subflow:1.1.3",
+	"shuffle-tools:1.2.0":   "shuffle/shuffle-tools:1.2.3",
 	"virustotal:1.1.1":      "shuffle/virustotal:1.1.1",
 }
 
