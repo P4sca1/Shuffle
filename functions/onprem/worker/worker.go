@@ -121,6 +121,7 @@ var autoDeploy = map[string]string{
 	"opensearch:1.1.3":      "shuffle/opensearch:1.1.3",
 	"shuffle-subflow:1.1.3": "shuffle/shuffle-subflow:1.1.3",
 	"shuffle-tools:1.2.3":   "shuffle/shuffle-tools:1.2.3",
+	"virustotal:1.1.1":      "shuffle/virustotal:1.1.1",
 }
 
 //"testing:1.0.0":         "frikky/shuffle:testing_1.0.0",
