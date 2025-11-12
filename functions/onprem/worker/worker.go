@@ -112,16 +112,21 @@ var imagedownloadTimeout = time.Second * 300
 
 var window = shuffle.NewTimeWindow(10 * time.Second)
 
+// PROCYDE
 // Images to be autodeployed in the latest version of Shuffle.
 var autoDeploy = map[string]string{
-	"http:1.4.3":            "shuffle/http:1.4.3",
-	"iris:1.1.3":            "shuffle/iris:1.1.3",
-	"logprep:1.0.1":         "shuffle/logprep:1.0.1",
-	"misp:1.1.3":            "shuffle/misp:1.1.3",
-	"opensearch:1.1.3":      "shuffle/opensearch:1.1.3",
-	"shuffle-subflow:1.1.0": "shuffle/shuffle-subflow:1.1.3",
-	"shuffle-tools:1.2.0":   "shuffle/shuffle-tools:1.2.3",
-	"virustotal:1.1.1":      "shuffle/virustotal:1.1.1",
+	"email-imap:1.3.0":      "shuffle/email-imap:1.3.0",
+	"email-smtp:1.3.0":      "shuffle/email-smtp:1.3.0",
+	"email-utilities:1.3.0": "shuffle/email-utilities:1.3.0",
+	"http:1.4.4":            "shuffle/http:1.4.4",
+	"iris:1.1.4":            "shuffle/iris:1.1.4",
+	"logprep:1.0.2":         "shuffle/logprep:1.0.2",
+	"misp:1.1.4":            "shuffle/misp:1.1.4",
+	"opensearch:1.1.4":      "shuffle/opensearch:1.1.4",
+	"otrs:1.1.0":            "shuffle/otrs:1.1.0",
+	"shuffle-subflow:1.1.0": "shuffle/shuffle-subflow:1.1.4",
+	"shuffle-tools:1.2.0":   "shuffle/shuffle-tools:1.2.4",
+	"virustotal:1.1.2":      "shuffle/virustotal:1.1.2",
 }
 
 //"testing:1.0.0":         "frikky/shuffle:testing_1.0.0",
@@ -1502,17 +1507,18 @@ func handleExecutionResult(workflowExecution shuffle.WorkflowExecution) {
 
 				log.Printf("[INFO] Remapping image name %s to %s due to registry+image name existing on k8s", imageName, newImageName)
 
+				// PROCYDE
 				// Shuffle hardcodes the app version for shuffle-tools to 1.2.0 and shuffle-subflow to 1.1.0.
 				// We remap it here to the latest image version.
 				// Hacky solution for now. See https://github.com/Shuffle/Shuffle/issues/1816 for a discussion on permanent solutions.
 				if parsedAppname == "shuffle-subflow" && action.AppVersion == "1.1.0" {
-					latestSubflowVersion := "1.1.3"
+					latestSubflowVersion := "1.1.4"
 					newImageName = fmt.Sprintf("%s/%s/%s:%s", localRegistry, baseimagename, parsedAppname, latestSubflowVersion)
 					log.Printf("[INFO] Remapping image name for shuffle-subflow to %s", newImageName)
 				}
 
 				if parsedAppname == "shuffle-tools" && action.AppVersion == "1.2.0" {
-					latestToolsVersion := "1.2.3"
+					latestToolsVersion := "1.2.4"
 					newImageName = fmt.Sprintf("%s/%s/%s:%s", localRegistry, baseimagename, parsedAppname, latestToolsVersion)
 					log.Printf("[INFO] Remapping image name for shuffle-tools to %s", newImageName)
 				}
